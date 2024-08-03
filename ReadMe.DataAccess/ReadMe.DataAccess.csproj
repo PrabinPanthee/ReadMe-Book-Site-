@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReadMe.DataAccess\ReadMe.DataAccess.csproj" />
+    <ProjectReference Include="..\ReadMe.Models\ReadMe.Models.csproj" />
   </ItemGroup>
 
 </Project>
