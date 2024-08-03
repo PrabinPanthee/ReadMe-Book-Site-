@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ReadMe.Models;
 using System.Diagnostics;
 
-namespace ReadMe.Controllers
+namespace ReadMe.Areas.Customer.Controllers
 {
     public class HomeController : Controller
     {
