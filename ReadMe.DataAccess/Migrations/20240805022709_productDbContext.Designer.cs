@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReadMe.DataAccess.Data;
 
@@ -10,9 +11,11 @@ using ReadMe.DataAccess.Data;
 namespace ReadMe.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240805022709_productDbContext")]
+    partial class productDbContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,20 +84,6 @@ namespace ReadMe.DataAccess.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("products");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            Author = "Prabin",
-                            Description = "Hello",
-                            ISBN = "56464",
-                            ListPrice = 20.0,
-                            Price = 17.5,
-                            Price100 = 16.0,
-                            Price50 = 16.5,
-                            Title = "Action"
-                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -10,11 +10,16 @@ namespace ReadMe.DataAccess.Repository.IRepository
     public class UnitOfWork : IUnitOfWorkcs
     {
         public ICategoryRepository categoryRepository {  get; private set; }
+
+        public IProductRepository productRepository {  get; private set; }
+
         private readonly ApplicationDbContext _db;
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             categoryRepository = new CategoryRepository(db);
+            productRepository = new ProductRepository(db);
+
         }
         public void Save()
         {

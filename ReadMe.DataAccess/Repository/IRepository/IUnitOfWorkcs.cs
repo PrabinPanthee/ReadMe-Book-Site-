@@ -9,6 +9,7 @@ namespace ReadMe.DataAccess.Repository.IRepository
     public interface IUnitOfWorkcs
     {
         ICategoryRepository categoryRepository { get; }
+        IProductRepository productRepository { get; }
 
         void Save();
     
