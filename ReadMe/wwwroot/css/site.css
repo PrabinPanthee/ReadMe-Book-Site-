@@ -70,6 +70,9 @@ html {
     color: #4b7147 !important;
 }
 
+.border-primary {
+    border-color: #192E2F !important;
+}
 .bg-primary {
     background-color: #192E2F !important;
 }
@@ -86,6 +89,7 @@ bg-success {
 
 .card {
     border-color: #425F4B !important;
+    
 }
 
 

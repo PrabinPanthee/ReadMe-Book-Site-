@@ -20,7 +20,24 @@ namespace ReadMe.DataAccess.Repository
 
         public void Update(Product product)
         {
-            _db.products.Update(product);
+            var objFromDb = _db.products.FirstOrDefault(p => p.ProductId == product.ProductId);
+            if ((objFromDb != null))
+            {
+                objFromDb.Title = product.Title;
+                objFromDb.Description = product.Description;
+                objFromDb.Author = product.Author;
+                objFromDb.ISBN = product.ISBN;
+                objFromDb.CategoryId = product.CategoryId;
+                objFromDb.Discount = product.Discount;
+                objFromDb.ListPrice = product.ListPrice;
+                
+                if (product.ImageUrl != null) 
+                {
+                    objFromDb.ImageUrl = product.ImageUrl;                
+                }
+                
+                
+            }
         }
     }
 }

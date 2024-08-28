@@ -4,6 +4,7 @@ using ReadMe.Models.Models;
 
 namespace ReadMe.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWorkcs _unit;

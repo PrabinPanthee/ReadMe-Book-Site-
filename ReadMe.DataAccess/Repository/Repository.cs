@@ -18,6 +18,9 @@ namespace ReadMe.DataAccess.Repository
         {
             _db = db;
             _dbSet = _db.Set<T>();
+
+            //for navigation property or accessing one entity from another
+            //_db.products.Include(u => u.Category);
         }
 
         public void Add(T entity)
@@ -25,16 +28,35 @@ namespace ReadMe.DataAccess.Repository
             _dbSet.Add(entity);
         }
 
-        public T Get(Expression<Func<T, bool>> Filter)
+        public T Get(Expression<Func<T, bool>> Filter, string? includeProperties = null)
         {
             IQueryable<T> query = _dbSet;
-           query =  query.Where(Filter);
+          
+            query =  query.Where(Filter);
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var property in includeProperties.
+                    Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(property);
+                }
+
+            }
             return query.FirstOrDefault();
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(string? includeProperties = null)
         {
             IQueryable<T> query = _dbSet;
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var property in includeProperties.
+                    Split(new char[] {','},StringSplitOptions.RemoveEmptyEntries) )
+                {
+                 query = query.Include(property);
+                }
+            
+            }
             return query.ToList();
         }
 

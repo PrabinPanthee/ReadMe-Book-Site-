@@ -11,8 +11,8 @@ using ReadMe.DataAccess.Data;
 namespace ReadMe.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240805023422_datas")]
-    partial class datas
+    [Migration("20240828103425_AddProductAndCategory")]
+    partial class AddProductAndCategory
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,24 +57,25 @@ namespace ReadMe.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Discount")
+                        .HasColumnType("float");
 
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("ListPrice")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Price100")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Price50")
                         .HasColumnType("float");
 
                     b.Property<string>("Title")
@@ -83,21 +84,20 @@ namespace ReadMe.DataAccess.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("products");
+                    b.HasIndex("CategoryId");
 
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            Author = "Prabin",
-                            Description = "Hello",
-                            ISBN = "56464",
-                            ListPrice = 20.0,
-                            Price = 17.5,
-                            Price100 = 16.0,
-                            Price50 = 16.5,
-                            Title = "Action"
-                        });
+                    b.ToTable("products");
+                });
+
+            modelBuilder.Entity("ReadMe.Models.Models.Product", b =>
+                {
+                    b.HasOne("ReadMe.Models.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }
