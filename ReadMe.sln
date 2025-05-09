@@ -5,9 +5,11 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadMe", "ReadMe\ReadMe.csproj", "{46D655EE-BACC-4EC0-BE99-27CDABC1647D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadMe.Models", "ReadMe.Models\ReadMe.Models.csproj", "{86CA83DB-3BBF-4129-8281-BE15C40748F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadMe.Models", "ReadMe.Models\ReadMe.Models.csproj", "{86CA83DB-3BBF-4129-8281-BE15C40748F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadMe.DataAccess", "ReadMe.DataAccess\ReadMe.DataAccess.csproj", "{909B5524-850A-4713-9574-03D6EAEE05D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadMe.DataAccess", "ReadMe.DataAccess\ReadMe.DataAccess.csproj", "{909B5524-850A-4713-9574-03D6EAEE05D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadMe.Utility", "ReadMe.Utility\ReadMe.Utility.csproj", "{C1A83E39-72DC-4B5E-9D0C-9D2A06777032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{909B5524-850A-4713-9574-03D6EAEE05D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909B5524-850A-4713-9574-03D6EAEE05D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909B5524-850A-4713-9574-03D6EAEE05D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A83E39-72DC-4B5E-9D0C-9D2A06777032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A83E39-72DC-4B5E-9D0C-9D2A06777032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A83E39-72DC-4B5E-9D0C-9D2A06777032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A83E39-72DC-4B5E-9D0C-9D2A06777032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

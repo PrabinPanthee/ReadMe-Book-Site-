@@ -10,6 +10,8 @@ namespace ReadMe.DataAccess.Repository.IRepository
     {
         ICategoryRepository categoryRepository { get; }
         IProductRepository productRepository { get; }
+        ICartRepository cartRepository { get; }
+        ICartItemRepository cartItemRepository { get; }
 
         void Save();
     
